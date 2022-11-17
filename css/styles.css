@@ -747,14 +747,6 @@ footer .logo {
     border-left: 1px solid var(--portfolio-border-list);
 }
 
-.footer-form {
-
-}
-
-.footer-form-wrapper {
-
-}
-
 .footer-label {
     font-weight: 700;
     font-size: 14px;
@@ -793,8 +785,8 @@ footer .logo {
 
     display: flex;
     align-items: center;
-    
-    color: rgba(255, 255, 255, 0.6);
+
+    color: var(--white-color);
 }
 
 .footer-send-icon {
@@ -834,17 +826,21 @@ footer .logo {
     width: 528px;
     height: 581px;
 
+    padding: 40px;
+
     background-color: var(--white-color);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 4px;    
 }
 
 .modal-close-button {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
     width: 30px;
     height: 30px;
-
-    margin-top: 8px;
-    margin-left: 490px;
 
     display: flex;
     justify-content: center;
@@ -883,8 +879,7 @@ footer .logo {
 } 
 
 .modal-form {
-    padding-left: 40px;
-    padding-right: 40px;
+    position: relative;
 }
 
 .modal-form-label {
@@ -900,14 +895,16 @@ footer .logo {
 
 .modal-form-group {
     position: relative;
+
     margin-bottom: 10px;
+
 }
 
 .modal-form-field {
     width: 448px;
     height: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+
+    padding-left: 42px;
     
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
@@ -915,6 +912,7 @@ footer .logo {
     outline-offset: -1px;
 }
 
+.modal-form-field:hover,
 .modal-form-field:focus {
     outline: 1px solid var(--accent);
     border-radius: 4px;
@@ -930,17 +928,29 @@ footer .logo {
     height: 18px;
 }
 
-.modal-form-field:focus+.modal-form-icon {
+.modal-form-field:focus+.modal-form-icon,
+.modal-form-field:hover+.modal-form-icon {
     fill: var(--accent);
 }
 
 .comment-form-message {
     display: block;
+    resize: none;
+
     width: 448px;
     height: 120px;
 
-    color: #ffffff;
-    background-color: transparent;
+    padding-top: 12px;
+    padding-left: 16px;
+
+    margin-bottom: 20px;
+
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
+    color: var(--main-font-color);
+
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     outline: unset;
@@ -948,21 +958,7 @@ footer .logo {
     transition: border-color 300ms;
 }
 
-.comment-form-message {
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-
-    color: var(--main-font-color);
-
-    padding-top: 12px;
-    padding-left: 16px;
-    padding-bottom: 12px;
-    padding-right: 16px;
-
-    margin-bottom: 20px;
-}
-
+.comment-form-message:hover,
 .comment-form-message:focus,
 .comment-form-message:not(:placeholder-shown) {
     border-color: var(--accent);
@@ -972,15 +968,17 @@ footer .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 7px;
 
     margin-bottom: 30px;
 }
 
 .modal-form-checkbox {
     appearance: none;
+
     width: 16px;
     height: 15px;
+
     border: 2px solid var(--main-font-color);
     border-radius: 2px;
 
@@ -988,6 +986,8 @@ footer .logo {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 0;
+
+    cursor: pointer;
 
     transition: background-color 300ms, border-color 300ms, background-size 300ms;
 }
